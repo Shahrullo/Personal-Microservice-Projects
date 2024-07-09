@@ -1,0 +1,11 @@
+*.pyc
+.vscode
+__pycache__
+
+# vim temporary files
+*~
+.*.sw?
+.cache
+
+# macOS
+.DS_Store
