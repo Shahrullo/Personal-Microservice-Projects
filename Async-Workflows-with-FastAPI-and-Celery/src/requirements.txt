@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+aiofiles
+httpx
+celery
+flower
+Jinja2
+redis
+pytest
