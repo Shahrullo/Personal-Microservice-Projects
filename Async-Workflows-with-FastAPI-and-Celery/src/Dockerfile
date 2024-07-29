@@ -5,8 +5,10 @@ FROM python:3.12-rc-slim-buster
 WORKDIR /usr/src/app
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1  # Prevent Python from writing pyc files
-ENV PYTHONUNBUFFERED 1  # Ensure Python output is sent straight to terminal
+# Prevent Python from writing pyc files
+ENV PYTHONDONTWRITEBYTECODE 1
+# Ensure Python output is sent straight to terminal
+ENV PYTHONUNBUFFERED 1  
 
 # Install system dependencies
 RUN apt-get update \
