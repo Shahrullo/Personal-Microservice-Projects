@@ -14,3 +14,19 @@ This project will guide you through implementing background task processing in a
 4. Configure Celery logging to file.
 5. Implement [Flower](https://flower.readthedocs.io/en/latest/) for Celery task and worker monitoring.
 6. Develop comprehensive tests for Celery tasks, including unit and integration testing approaches.
+
+## How to run
+* Make sure [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) is installed in your local machine
+* Start the containers
+    ```
+    $ docker-compose up -d --build
+    ```
+* Open your browser to http://localhost:8000 to view the app or to http://localhost:5555 to view the Flower dashboard.
+* Trigger a new task
+    ```
+    $ curl http://localhost:8000/tasks -H "Content-Type: application/json" --data '{"type": 0}'
+    ```
+* Check the status
+    ```
+    $ curl http://localhost:8000/tasks/<TASK_ID>
+    ```
