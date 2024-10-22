@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-snippetbox
+    environment:
+      MYSQL_ROOT_PASSWORD: userpassword # Set root password
+      MYSQL_DATABASE: snippetbox        # Initial database to create
+      MYSQL_USER: user                  # Custom user
+      MYSQL_PASSWORD: userpassword      # Password for custom user
+    ports:
+      - "3306:3306"                     # Expose MySQL port
+    volumes:
+      - ./db_data:/var/lib/mysql        # Persist MySQL data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql # Custom initialization script
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  db_data:
