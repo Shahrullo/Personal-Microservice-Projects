@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"snippetbox.shahrullohon.net/internals/models"
+	"snippetbox.shahrullohon.net/internal/models"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -35,7 +35,7 @@ func main() {
 
 	app := &application{
 		logger:   logger,
-		snippets: *models.SnippetModel{DB: db},
+		snippets: &models.SnippetModel{DB: db},
 	}
 
 	logger.Info("starting server", slog.String("addr", *addr))
