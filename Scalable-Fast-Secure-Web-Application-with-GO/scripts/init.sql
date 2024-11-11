@@ -1,5 +1,5 @@
 -- Create the snippetbox database if not exists. Defined in docker compose
--- CREATE DATABASE snippetbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE snippetbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Switch to using the created database
 USE snippetbox;

@@ -5,7 +5,7 @@ services:
     image: mysql:8.0
     container_name: mysql-snippetbox
     environment:
-      MYSQL_ROOT_PASSWORD: userpassword # Set root password
+      MYSQL_ROOT_PASSWORD: rootpassword # Set root password
       MYSQL_DATABASE: snippetbox        # Initial database to create
       MYSQL_USER: user                  # Custom user
       MYSQL_PASSWORD: userpassword      # Password for custom user
